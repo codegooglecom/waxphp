@@ -1,0 +1,26 @@
+﻿<?xml version="1.0"?>
+
+<html>
+	<head>
+		<title>WAX TimeClock Application</title>
+		<ThemeResources />
+	</head>
+	
+	<body>
+		<PageActions>
+			<Action name="punch">
+				<WForm Action="index.php" ID="punchForm">
+					<WTextField ID="pin" />
+					<br />
+					<WSubmit Text="Punch" />
+				</WForm>
+			</Action>
+			<Action name="report">
+				Need to use a GridView or some other data structure for showing this information
+			</Action>
+			<DefaultPageAction>
+				<a href='index.php?action=punch'>Punch In/Out</a>
+			</DefaultPageAction>
+		</PageActions>
+	</body>	
+</html>

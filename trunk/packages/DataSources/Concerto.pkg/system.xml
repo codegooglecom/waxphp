@@ -1,0 +1,531 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/">    <channel> 
+        <title>Service &amp; Community</title> 
+        <link>http://signage.union.rpi.edu//</link> 
+        <description>RSS Feed from Concerto API</description> 
+        <language>en-us</language> 
+        <pubDate>Mon, 02 Mar 2009 13:24:19 EST</pubDate> 
+        <generator>Concerto API 0.08</generator> 
+        <webMaster>concerto@union.rpi.edu</webMaster> 
+        <image> 
+            <url>http://signage.union.rpi.edu/admin//images/conc_logowhitebg_sm.jpg</url> 
+            <title>Concerto</title> 
+            <link>http://signage.union.rpi.edu/admin/</link> 
+            <width>700</width> 
+            <height>185</height> 
+        </image> 
+ 
+        <item> 
+            <title>RPI TV Weekly Meetings</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1588&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1588&format=raw" /> ]]></description> 
+            <pubDate>Tue, 02 Dec 2008 21:17:31 EST</pubDate> 
+            <author>ebunam (Marc Ebuna)</author> 
+            <guid>1588</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1588&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">RPI TV Weekly Meetings</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1588&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2008-12-02T12:00:00+EST;
+                end=2009-04-29T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Suicide Prevention</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1597&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1597&format=raw" /> ]]></description> 
+            <pubDate>Thu, 04 Dec 2008 10:13:36 EST</pubDate> 
+            <author>spruch (Heidi Spruce)</author> 
+            <guid>1597</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1597&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">Suicide Prevention</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1597&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2008-12-04T12:00:00+EST;
+                end=2009-05-31T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Suicide Prevention</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1598&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1598&format=raw" /> ]]></description> 
+            <pubDate>Thu, 04 Dec 2008 10:14:09 EST</pubDate> 
+            <author>spruch (Heidi Spruce)</author> 
+            <guid>1598</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1598&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">Suicide Prevention</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1598&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2008-12-04T12:00:00+EST;
+                end=2009-05-31T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Suicide Prevention</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1599&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1599&format=raw" /> ]]></description> 
+            <pubDate>Thu, 04 Dec 2008 10:14:45 EST</pubDate> 
+            <author>spruch (Heidi Spruce)</author> 
+            <guid>1599</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1599&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">Suicide Prevention</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1599&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2008-12-04T12:00:00+EST;
+                end=2009-05-31T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Suicide Prevention</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1600&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1600&format=raw" /> ]]></description> 
+            <pubDate>Thu, 04 Dec 2008 10:15:17 EST</pubDate> 
+            <author>spruch (Heidi Spruce)</author> 
+            <guid>1600</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1600&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">Suicide Prevention</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1600&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2008-12-04T12:00:00+EST;
+                end=2009-05-31T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Ski &amp; Snowboard Club Stratton / Okemo Program</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1700&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1700&format=raw" /> ]]></description> 
+            <pubDate>Sun, 11 Jan 2009 19:53:05 EST</pubDate> 
+            <author>diazm2 (Melvin Diaz)</author> 
+            <guid>1700</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1700&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">Ski &amp; Snowboard Club Stratton / Okemo Program</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1700&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-01-11T12:00:00+EST;
+                end=2009-03-06T11:59:00+EST;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>RPI Paintball 1</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1702&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1702&format=raw" /> ]]></description> 
+            <pubDate>Sun, 11 Jan 2009 19:58:36 EST</pubDate> 
+            <author>diazm2 (Melvin Diaz)</author> 
+            <guid>1702</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1702&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">RPI Paintball 1</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1702&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-01-11T12:00:00+EST;
+                end=2009-04-30T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>RPI Paintball 2</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1703&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1703&format=raw" /> ]]></description> 
+            <pubDate>Sun, 11 Jan 2009 19:59:16 EST</pubDate> 
+            <author>diazm2 (Melvin Diaz)</author> 
+            <guid>1703</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1703&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">RPI Paintball 2</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1703&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-01-11T12:00:00+EST;
+                end=2009-04-30T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>RPI Paintball 3</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1704&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1704&format=raw" /> ]]></description> 
+            <pubDate>Sun, 11 Jan 2009 20:00:00 EST</pubDate> 
+            <author>diazm2 (Melvin Diaz)</author> 
+            <guid>1704</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1704&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">RPI Paintball 3</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1704&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-01-11T12:00:00+EST;
+                end=2009-04-30T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>URP with Rensselaer Center for Open Source Software</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1723&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1723&format=raw" /> ]]></description> 
+            <pubDate>Tue, 13 Jan 2009 13:37:22 EST</pubDate> 
+            <author>roysab (Badri Roysam)</author> 
+            <guid>1723</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1723&amp;format=raw" type="image/png" expression="full" /> 
+            <media:title type="plain">URP with Rensselaer Center for Open Source Software</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1723&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-01-13T12:00:00+EST;
+                end=2009-05-11T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>AND recruitment flyer</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1742&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1742&format=raw" /> ]]></description> 
+            <pubDate>Wed, 14 Jan 2009 21:37:11 EST</pubDate> 
+            <author>grovek (Kenneth Daniel Grover)</author> 
+            <guid>1742</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1742&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">AND recruitment flyer</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1742&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-01-15T12:00:00+EST;
+                end=2009-05-08T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>relay question slide</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1814&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1814&format=raw" /> ]]></description> 
+            <pubDate>Mon, 26 Jan 2009 09:30:36 EST</pubDate> 
+            <author>rodrik2 (Kevin Rodrigo)</author> 
+            <guid>1814</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1814&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">relay question slide</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1814&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-01-26T12:00:00+EST;
+                end=2009-04-25T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Astronomy at Hirsch Observatory 1 </title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1862&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1862&format=raw" /> ]]></description> 
+            <pubDate>Sun, 01 Feb 2009 14:09:08 EST</pubDate> 
+            <author>eltond (Dan Elton)</author> 
+            <guid>1862</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1862&amp;format=raw" type="image/png" expression="full" /> 
+            <media:title type="plain">Astronomy at Hirsch Observatory 1 </media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1862&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-02T12:00:00+EST;
+                end=2009-05-30T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Astronomy at Hirsch Observatory 2</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1863&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1863&format=raw" /> ]]></description> 
+            <pubDate>Sun, 01 Feb 2009 14:10:47 EST</pubDate> 
+            <author>eltond (Dan Elton)</author> 
+            <guid>1863</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1863&amp;format=raw" type="image/png" expression="full" /> 
+            <media:title type="plain">Astronomy at Hirsch Observatory 2</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1863&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-02T12:00:00+EST;
+                end=2009-05-16T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>FIGHT BACK against cancer @ RelayForLife.org/RPI</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1918&amp;select=content&amp;format=rss</link> 
+            <description>FIGHT BACK against cancer @ RelayForLife.org/RPI</description> 
+            <pubDate>Mon, 09 Feb 2009 14:29:21 EST</pubDate> 
+            <author>hogand (Daniel Hogan)</author> 
+            <guid>1918</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <dcterms:valid> 
+                start=2009-02-09T12:00:00+EST;
+                end=2009-04-18T7:30:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>IPAC promo</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1932&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1932&format=raw" /> ]]></description> 
+            <pubDate>Tue, 10 Feb 2009 19:25:40 EST</pubDate> 
+            <author>moreia3 (Alex Morein)</author> 
+            <guid>1932</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1932&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">IPAC promo</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1932&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-10T12:00:00+EST;
+                end=2009-05-07T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>overnight hosting for admissions office</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1938&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1938&format=raw" /> ]]></description> 
+            <pubDate>Wed, 11 Feb 2009 14:47:24 EST</pubDate> 
+            <author>brulee (Elizabeth Brule)</author> 
+            <guid>1938</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1938&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">overnight hosting for admissions office</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1938&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-12T12:00:00+EST;
+                end=2009-03-16T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Formula SAE Meetings</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1946&amp;select=content&amp;format=rss</link> 
+            <description>Formula SAE Racecar Meetings Every Wednesday 8pm Ricketts 212</description> 
+            <pubDate>Thu, 12 Feb 2009 22:01:00 EST</pubDate> 
+            <author>gorinm (Matthew Gorini)</author> 
+            <guid>1946</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <dcterms:valid> 
+                start=2009-02-12T12:00:00+EST;
+                end=2009-04-30T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Health Professional School Applicants</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1992&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1992&format=raw" /> ]]></description> 
+            <pubDate>Wed, 18 Feb 2009 14:26:09 EST</pubDate> 
+            <author>fielda (Augusta N. Field)</author> 
+            <guid>1992</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1992&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">Health Professional School Applicants</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1992&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-18T12:00:00+EST;
+                end=2009-03-06T11:59:00+EST;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Safe Spring Break!</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1993&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1993&format=raw" /> ]]></description> 
+            <pubDate>Wed, 18 Feb 2009 14:32:48 EST</pubDate> 
+            <author>schust (Tara Schuster)</author> 
+            <guid>1993</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1993&amp;format=raw" type="image/png" expression="full" /> 
+            <media:title type="plain">Safe Spring Break!</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1993&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-28T12:00:00+EST;
+                end=2009-03-05T11:59:00+EST;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Spring Break With Habitat for Humanity in Albany</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=1996&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=1996&format=raw" /> ]]></description> 
+            <pubDate>Wed, 18 Feb 2009 23:24:44 EST</pubDate> 
+            <author>mattsk (Kyle Mattson)</author> 
+            <guid>1996</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=1996&amp;format=raw" type="image/png" expression="full" /> 
+            <media:title type="plain">Spring Break With Habitat for Humanity in Albany</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=1996&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-18T12:00:00+EST;
+                end=2009-03-06T11:59:00+EST;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>PLP: Professional Leadership Program</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2003&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=2003&format=raw" /> ]]></description> 
+            <pubDate>Fri, 20 Feb 2009 14:50:05 EST</pubDate> 
+            <author>turnej2 (Jerin Turner)</author> 
+            <guid>2003</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=2003&amp;format=raw" type="image/png" expression="full" /> 
+            <media:title type="plain">PLP: Professional Leadership Program</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=2003&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-21T9:00:00+EST;
+                end=2009-03-02T11:59:00+EST;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Student Senate</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2005&amp;select=content&amp;format=rss</link> 
+            <description>The Student Senate meets on Mondays at 8pm in Union 3202</description> 
+            <pubDate>Sun, 22 Feb 2009 12:52:58 EST</pubDate> 
+            <author>zwackm (Michael Zwack)</author> 
+            <guid>2005</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <dcterms:valid> 
+                start=2009-02-22T12:00:00+EST;
+                end=2009-03-30T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>RPI's Got Talent hosted by Alpha Omega Epsilon</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2008&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=2008&format=raw" /> ]]></description> 
+            <pubDate>Mon, 23 Feb 2009 11:53:48 EST</pubDate> 
+            <author>nortod (Danielle Norton)</author> 
+            <guid>2008</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=2008&amp;format=raw" type="image/png" expression="full" /> 
+            <media:title type="plain">RPI's Got Talent hosted by Alpha Omega Epsilon</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=2008&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-23T12:00:00+EST;
+                end=2009-03-17T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>AAW Night Show 2009 MC Tryouts</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2061&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=2061&format=raw" /> ]]></description> 
+            <pubDate>Thu, 26 Feb 2009 09:35:14 EST</pubDate> 
+            <author>kongv (Victor Kong)</author> 
+            <guid>2061</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=2061&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">AAW Night Show 2009 MC Tryouts</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=2061&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-26T12:00:00+EST;
+                end=2009-03-19T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Union Annual Report 01</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2066&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=2066&format=raw" /> ]]></description> 
+            <pubDate>Thu, 26 Feb 2009 21:32:04 EST</pubDate> 
+            <author>zaikb (Brian Zaik)</author> 
+            <guid>2066</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=2066&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">Union Annual Report 01</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=2066&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-26T12:00:00+EST;
+                end=2009-03-11T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Union Annual Report 02</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2068&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=2068&format=raw" /> ]]></description> 
+            <pubDate>Thu, 26 Feb 2009 22:24:57 EST</pubDate> 
+            <author>zaikb (Brian Zaik)</author> 
+            <guid>2068</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=2068&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">Union Annual Report 02</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=2068&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-26T12:00:00+EST;
+                end=2009-03-11T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Air Force ROTC Recruiting Poster</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2069&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=2069&format=raw" /> ]]></description> 
+            <pubDate>Fri, 27 Feb 2009 12:16:59 EST</pubDate> 
+            <author>blackk (Kyle Blackman)</author> 
+            <guid>2069</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=2069&amp;format=raw" type="image/jpeg" expression="full" /> 
+            <media:title type="plain">Air Force ROTC Recruiting Poster</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=2069&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-02-27T12:00:00+EST;
+                end=2009-05-20T11:59:00+EDT;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Summer 2009 Financial Aid Information Session</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2070&amp;select=content&amp;format=rss</link> 
+            <description>Tuesday March 3, 2009. 6PM Start in the Union Room 3606 (Shelnutt Gallery)
+Find out about the Student Tuition Assistance Program!</description> 
+            <pubDate>Fri, 27 Feb 2009 14:13:15 EST</pubDate> 
+            <author>reilem (Megan Reile)</author> 
+            <guid>2070</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <dcterms:valid> 
+                start=2009-02-27T2:30:00+EST;
+                end=2009-03-03T11:59:00+EST;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Summer 2009 Jobs on Campus Information Session     March 5     6PM Start      Union 3606 Shelnutt Gallery</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2071&amp;select=content&amp;format=rss</link> 
+            <description>Thursday March 5, 2009. 6PM Start in the Union Room 3606 (Shelnutt Gallery). Come see what jobs are available for you this summer!</description> 
+            <pubDate>Fri, 27 Feb 2009 14:18:20 EST</pubDate> 
+            <author>reilem (Megan Reile)</author> 
+            <guid>2071</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <dcterms:valid> 
+                start=2009-02-27T2:30:00+EST;
+                end=2009-03-05T11:59:00+EST;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+        <item> 
+            <title>Town Hall Meeting</title> 
+            <link>http://signage.union.rpi.edu/content/render/index.php?&amp;select_id=2538&amp;select=content&amp;format=rss</link> 
+            <description><![CDATA[ ><img src="http://signage.union.rpi.edu/content/render/index.php?width=100&height=100&select=content&select_id=2538&format=raw" /> ]]></description> 
+            <pubDate>Sun, 01 Mar 2009 21:05:19 EST</pubDate> 
+            <author>chesak (Kara Chesal)</author> 
+            <guid>2538</guid> 
+            <category domain="http://signage.union.rpi.edu/content/render/index.php?&amp;select=feed&amp;select_id=1&amp;format=rss">Service &amp; Community</category> 
+            <media:content url="http://signage.union.rpi.edu/content/render/index.php?&amp;select=content&amp;select_id=2538&amp;format=raw" type="image/png" expression="full" /> 
+            <media:title type="plain">Town Hall Meeting</media:title> 
+            <media:thumbnail url="http://signage.union.rpi.edu/content/render/index.php?width=100&amp;height=100&amp;select=content&amp;select_id=2538&amp;format=raw" width="100" height="100"/> 
+            <dcterms:valid> 
+                start=2009-03-01T12:00:00+EST;
+                end=2009-03-05T11:59:00+EST;
+                scheme=W3C-DTF
+            </dcterms:valid> 
+        </item> 
+    </channel> 
+</rss> 

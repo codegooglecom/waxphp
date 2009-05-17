@@ -1,0 +1,42 @@
+﻿.codepanel {
+	background:black;
+	color:white;
+}
+.codepanel, .codepanel * {
+	font-family:Courier New, Courier, mono;
+	font-size:8pt;
+}
+
+.codepanel .comment, .codepanel .comment * {
+	color:orange !important;
+}
+
+.codepanel .phptag {
+	background:black;
+	color:yellow;
+}
+
+.codepanel .variable {
+	color:#33A8FF;
+}
+.codepanel .keyword {
+	color:#D200D2;
+	font-weight:bold;
+}
+.codepanel .number {
+	color:red;
+}
+.codepanel .string, .codepanel .string * {
+	color:lime !important;
+}
+.codepanel .object {
+}
+.codepanel .function {
+}
+
+.php *,.xml * {
+	font-family:courier new,courier,mono !important;
+}
+.php,.xml {
+	background:white;
+}

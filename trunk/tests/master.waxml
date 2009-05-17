@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<html>
+    <head>
+        <title>WISP Website</title>
+        <link rel='stylesheet' type='text/css' href='wispwebsite_css.css' />
+        
+        <Import Package="HTML/Extended" />
+        <Import Package="HTML/Highlighter" />
+        <Import Package="HTML/WaxForms" />
+    </head>
+    <body>
+        <div class='pagewrapper'>
+            <div class='header'>
+                <div class='logo'>
+                    <a href='index.php'><Image From="theme" Which="wispblue" Src="wispmed.png" /></a>
+                </div>
+                
+                <div class='navigation'>
+                    <NavList>
+                        <NavListItem Text="Home" Link="structure.php" />
+                        <NavListItem Text="Test 1" Link="structure.php?action=first" />
+                        <NavListItem Text="Test 2" Link="structure.php?action=second" />
+                    </NavList>
+                </div>
+            </div>
+            <hr />
+            <div class='content'>
+                <PageActions>
+                    <PageAction name='first'>
+                        <h2>This is a test action</h2>
+						And this is the page content.
+                    </PageAction>
+                    <PageAction name="second">
+                    	<h2>This is another test action </h2>
+						This is a test action.
+                    </PageAction>
+                    
+                    <!-- must be placed after all other PageActions have been defined -->
+                    <DefaultPageAction>
+                        <h2>Welcome to Wax</h2>
+                        This page is both a demonstration of the Wax framework itself as well as 
+                        the current working prototype of the Wax project website. <br />
+                        <br />
+                        The goal of the Wax project is to develop a framework that allows
+                        for rapid prototyping (even moreso than existing frameworks), quick 
+                        scripting jobs, and large-scale projects.<br />
+                        <br />
+                        Wax also functions as a software-as-a-service framework.  Once the 
+                        administration interface is complete, a single Wax install will be able to 
+                        run several applications and websites while still having a central administration
+                        interface for the framework and the sites themselves.
+                    </DefaultPageAction>
+                </PageActions>
+            </div>
+            <hr />
+            <div class='footer'>
+                <b>Wax PHP Framework</b><br />
+                &amp;copy; 2009 Joe Chrzanowski<br />
+                Affiliated with <a href='http://rcos.cs.rpi.edu/'>RPI Center for Open-Source Software</a>
+            </div>
+        </div>
+    </body>
+</html>
