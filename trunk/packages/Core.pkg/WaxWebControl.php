@@ -12,7 +12,7 @@
 	*
 	* @author Joe Chrzanowski
 	*/
-	class WaxWebControl extends WaxControl {
+	class WaxWebControl extends XMLControl {
 		public $htmlattributes = array();
 		public $innerHTML = null;
 		
@@ -37,6 +37,29 @@
 			$this->value .= $html;
 		}
 
+
+		/**
+		* The flattenChildren function is necessary for making WaxControls act as they should.
+		* The function basically takes a tree, returned from a WaxControl's RenderChildren() function,
+		* and recurses through it to create an array of the children.
+		*
+		* This allows WaxControls to act as container classes
+		*
+		* @param array $arr The tree of children to flatten
+		*/
+		private function flattenChildren($arr) {
+			$ret = array();
+			foreach ($arr as $obj) {
+				if (is_array($obj)) {
+					$ret = array_merge($ret, $this->flattenChildren($obj));
+				}
+				else {
+					$ret[] = $obj;
+				}	
+			}
+			return $ret;
+		}
+
 		/**
 		* The RenderChildren function adds children 
 		* to the rendered control
@@ -49,7 +72,9 @@
 				if ($cr_res instanceof DOMNode) {
 					$ctrl->appendChild($cr_res);
 				}
-				else if (is_array($cr_res)) {
+				else if (is_array($cr_res)) {					
+					$cr_res = $this->flattenChildren($cr_res);
+					
 					foreach ($cr_res as $cchild) {
 						if ($cchild instanceof DOMNode) {
 							$ctrl->appendChild($cchild);

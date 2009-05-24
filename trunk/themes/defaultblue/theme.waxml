@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<ThemeConf Name="Default Blue">
+	<!-- CSSVar values required for a theme. -->
+	<CSSVar Name="PrimaryDark" Value="#162D50" />
+	<CSSVar Name="PrimaryLight" Value="#D8E8FF" />
+	<CSSVar Name="SecondaryDark" Value="#2C5AA0" />
+	<CSSVar Name="SecondaryLight" Value="#ADCEFF" />
+	
+	<CSSVar Name="PrimaryFontColor" Value="black" />
+	<CSSVar Name="SecondaryFontColor" Value="white" />
+	
+	<CSSVar Name="PrimaryBorder" Value="solid 3px black" />
+	<CSSVar Name="SecondaryBorder" Value="solid 2px black" />
+	<CSSVar Name="PrimaryPadding" Value="15px" />
+	<CSSVar Name="SecondaryPadding" Value="5px" />
+	<CSSVar Name="PrimaryMargin" Value="25px" />
+	<CSSVar Name="SecondaryMargin" Value="10px" />
+	
+	<!-- Custom Vars specific to this theme -->
+</ThemeConf>

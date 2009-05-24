@@ -28,6 +28,8 @@
             // then it should be a file
             $filename = (is_file($package) ? $package : WaxConf::LookupPath("fs/package",array("package" => $package)));
             
+            $ret = array('css'=> array(), 'js' => array());
+            
             if (!is_dir($filename)) throw new Exception("ERROR: Invalid Object '" . $package . "'");
             else {
                 // need to include the php objects
@@ -43,7 +45,7 @@
                 	$cssfiles = scandir($css);
 	                foreach ($cssfiles as $cssfile) {
 	                	if ($cssfile[0] == '.') continue;
-	                	self::$_jscss['css'][] = "$webcss/$cssfile";
+	                	$ret['css'][] = "$webcss/$cssfile";
 	                }
 	            }
                 $js = WaxConf::LookupPath("fs/package/scriptdir",array('package' => $package));
@@ -52,10 +54,12 @@
                 	$jsfiles = scandir($js);
 	                foreach ($jsfiles as $jsfile) {
 	                	if ($jsfile[0] == '.') continue;
-	                	self::$_jscss['js'][] = "$webjs/$jsfile";
+	                	$ret['js'][] = "$webjs/$jsfile";
 	                }
 	            }
             }
+            
+            return $ret;
         }
         
         /**

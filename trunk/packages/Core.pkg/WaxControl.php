@@ -14,11 +14,11 @@
 		/**
 		* Constructor -- basically just sets a few basic housekeeping things for the control
 		*/
-		function __construct($tagName, $attributes = null) {
+		function __construct($tagName = 'WaxControl', $attributes = null) {
 			parent::__construct($tagName, null, $attributes);
 			
 		}
-		
+				
 		/**
 		* The RenderChildren function of a WaxControl returns an array of stuff to render.
 		*/

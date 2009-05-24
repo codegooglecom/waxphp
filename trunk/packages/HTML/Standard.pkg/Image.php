@@ -10,7 +10,7 @@
             // which properties to allow
             $this->_allow = array("From","Which","Src");
         }
-        function Build() {
+        function OnConstruct() {
             $actualsrc = "";
             
             if (!$this->xmlattributes["Src"]) echo "SOURCE UNSPECIFIED<br>";                //throw new MissingPropertyException("Src");
@@ -23,6 +23,7 @@
                 $actualsrc = $this->xmlattributes["Src"];
             }
             
+            $this->htmlattributes['style'] = "border:0px;";
             $this->htmlattributes['src'] = $actualsrc;
         }
     }

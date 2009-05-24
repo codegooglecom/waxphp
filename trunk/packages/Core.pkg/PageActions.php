@@ -13,12 +13,16 @@
 				$this->_actionvar = $this->xmlattributes['ActionVar'];
 		}
 		function ShouldRender($action) {
-			echo "ShouldRender '$action' <br />";
-			if (isset($_REQUEST[$this->_actionvar]) && $_REQUEST[$this->_actionvar] == $action) {	
+			if (empty($action)) {
+				if ($this->_showdefault) 
+					return true;
+			}
+			else if (isset($_REQUEST[$this->_actionvar]) && $_REQUEST[$this->_actionvar] == $action) {	
 				$this->_showdefault = false;
 				return true;
 			}
-			else return false;
+
+			return false;
 		}
 	}
 	
@@ -27,10 +31,8 @@
 			parent::__construct('PageAction');
 		}
 		function Render(DOMDocument $doc) {
-			echo "Should render : " . $this->xmlattributes['name'] . "<br />";
 			if ($this->parentNode->ShouldRender($this->xmlattributes['name'])) {
-				echo "Calling parent::Render() on action: " . $this->xmlattributes['name'] . "<br />";
-				parent::Render($doc);
+				return parent::Render($doc);
 			}
 		}
 	}

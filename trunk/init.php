@@ -30,7 +30,7 @@
         // <varname>        a $_SERVER variable
         
         
-        // DON'T FUCK WITH THIS UNLESS YOU KNOW WHAT YOU'RE DOING
+        // DON'T CHANGE THESE UNLESS YOU KNOW WHAT YOU'RE DOING
         // You most likely should never ever have to touch this.
         private static $_paths = array(
             'relpath' 	=> '/Wax',										// basically the web access url for Wax
@@ -47,19 +47,22 @@
             'imagedir'  => 'img',
             'scriptdir'	=> 'js',
             'cssdir' 	=> 'css',
-            'layoutdir' => 'layouts',
+            'templatedir' => 'templates',
+            'csscache'  => 'csscache',
             
             'image' 	=> '[imagedir]/{image}',
             'script'	=> '[scriptdir]/{script}.js',
             'css'		=> '[cssdir]/{css}.css',
-            'layout'	=> '[layoutdir]/{layout}.xml'
+            'template'	=> '[templatedir]/{template}.waxml'
         );
         private static $_options = array(
             'debug' => false,
             'handle_exceptions' => true,
         );
         
-        function __construct() { throw new Exception("ERROR: You can't instantiate a WaxConf object"); }
+        function __construct() { 
+        	throw new Exception("ERROR: You can't instantiate a WaxConf object"); 
+        }
         
         static function PackageExists($package) {
             $path = self::LookupPath('fs/package',array('package' => $package));
@@ -95,12 +98,15 @@
         static function LookupPath($what, $args = null) {
             // pass something that aggregates the path vars
 			// first replace all occurrences of strings with their proper counterparts
-			$what = preg_replace("/([\w]+)/","[$0]",$what);
-			$what = self::ResolvePaths($what);
+			$replaced = preg_replace("/([\w]+)/","[$0]",$what);
+			$replaced = self::ResolvePaths($replaced);
 			if ($args) {
-				$what = self::ResolveArgs($what,$args);
+				$replaced = self::ResolveArgs($replaced,$args);
 			}
-			return $what;
+			
+			if (strpos($what, "fs/") !== false)
+				$replaced = realpath($replaced);
+			return $replaced;
         }
         
         
@@ -115,6 +121,11 @@
             }
         }
         
+        static function FStoWEB($path) {
+        	$path = str_replace(self::LookupPath("fs"),self::LookupPath("web"),$path);
+        	return $path;
+        }
+        
         // resolve paths using other variabels from the $_paths array
         // also replace any <VAR> vars with $_SERVER[VAR]
         static function ResolvePaths($path) {
@@ -122,7 +133,12 @@
             
             while (preg_match_all('/\[(\w+)]/',$path, $matches)) {
                 foreach ($matches[1] as $match) {
-                    $path = str_replace("[$match]",self::$_paths[$match],$path);
+                	if (isset(self::$_paths[$match]))
+	                    $path = str_replace("[$match]",self::$_paths[$match],$path);
+	                else {
+	                	echo "Error Parsing Var $match<br />";
+	                	$path = str_replace("[$match]",'',$path);
+	                }
                 }
             }
             preg_match_all('/<(\w+)>/',$path, $matches);

@@ -178,7 +178,7 @@
 		* 
 		* @param XMLReader $reader The XMLReader object to run through - must be initialized through Page::LoadTemplate
 		*/
-		private function xmlLoadTemplate(XMLReader $reader) {
+		private static function xmlLoadTemplate(XMLReader $reader) {
 			$all = array();
             
             while ($reader->read()) {
@@ -202,7 +202,7 @@
                         if ($node) {
                             // if there's a child node or some text, recurse
                             if (!$reader->isEmptyElement) {
-                                $res = $this->xmlLoadTemplate($reader);
+                                $res = self::xmlLoadTemplate($reader);
                                 
                                 if (!is_array($res))
                                     $node->value = $res;
@@ -227,7 +227,7 @@
                             // this is why this method can't be called from a static context --
                             // we need to maintain a heirarchy for proper functioning
                             if (method_exists($node,"OnConstruct")) {
-                                $node->OnConstruct($this);
+                                $node->OnConstruct();
                             }
                             
                             $all[] = $node;
@@ -259,12 +259,12 @@
 		* @param string $templateFile The url of the template file to parse
 		* @param bool $returnall If the file happens to be improperly formatted, defines whether or not to return all elements at level 0 or just the initial one
 		*/
-		function LoadTemplate($templateFile, $returnall = false) {
+		static function LoadTemplate($templateFile, $returnall = false) {
 			$reader = new XMLReader();
             if (file_exists($templateFile)) {
                 $reader->open($templateFile);
                 
-                $res = $this->xmlLoadTemplate($reader);
+                $res = self::xmlLoadTemplate($reader);
                 return ($returnall ? $res : $res[0]);
             }
             else {
@@ -305,7 +305,8 @@
 					}
 				}
 				
-				$domdoc = new DOMDocument();
+				$domdoc = new DOMDocument('1.0','UTF-8');
+				
 				$result = $this->_page->Render($domdoc);
 				$domdoc->appendChild($result);
 				echo $domdoc->saveHTML();
