@@ -18,7 +18,7 @@
 		}
 		
 		static function XMLFixEntities($text) {
-			// use a list of standard HTML entities and their corresponding unicode characters to allow their usage in WaxML documents
+			// use a list of standard HTML entities and their corresponding ASCII character codes to allow their usage in WaxML documents
 			$xtoh = array(
 				"&nbsp;" => 160,
 				"&lt;" => 60,
@@ -33,7 +33,7 @@
 				
 				"&amp;" => 38 		// have to do this last.
 			);
-			foreach ($xtoh as $key => $num) $xtoh[$key] = "&#$num;";
+			foreach ($xtoh as $key => $num) $xtoh[$key] = "&#$num;";	// plug in the numbers to &#____;
 			return str_replace(array_keys($xtoh),array_values($xtoh),$text);
 		}
 		
