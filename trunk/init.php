@@ -33,8 +33,9 @@
         // DON'T CHANGE THESE UNLESS YOU KNOW WHAT YOU'RE DOING
         // You most likely should never ever have to touch this.
         private static $_paths = array(
-            'relpath' 	=> '/Wax',										// basically the web access url for Wax
+            'relpath' 	=> '/wax',										// basically the web access url for Wax
             'web' 		=> '[relpath]',
+            'DOCUMENT_ROOT' => '<DOCUMENT_ROOT>',
             'fs' 		=> '<DOCUMENT_ROOT>[relpath]',
             'nullpath' 	=> '',
             'core' 		=> 'core',                                          // Folder that holds the core Wax functionality
@@ -74,12 +75,7 @@
             if (is_dir($path)) return true;
             else return false;
         }
-        
-        // get a directory
-        static function GetDirPath($type, $path, $vars = null) {
-        	
-        }
-        
+                
         static function GetPath($type, $path, $vars = null) {
             if (self::$_paths[$path]) {
                 $parsedpath = self::ResolvePaths("[$type]") . '/' . self::ResolvePaths(self::$_paths[$path]);
@@ -103,9 +99,12 @@
 			if ($args) {
 				$replaced = self::ResolveArgs($replaced,$args);
 			}
-			
+
+			// if it's a filesystem path, resolve the path
+			/*
 			if (strpos($what, "fs/") !== false)
 				$replaced = realpath($replaced);
+			*/
 			return $replaced;
         }
         
@@ -122,7 +121,11 @@
         }
         
         static function FStoWEB($path) {
-        	$path = str_replace(self::LookupPath("fs"),self::LookupPath("web"),$path);
+        	$path = str_replace(self::LookupPath("fs"),self::LookupPath("web/"),$path);
+        	return $path;
+        }
+        static function WEBtoFS($path) {
+        	$path = self::LookupPath("DOCUMENT_ROOT") . $path;
         	return $path;
         }
         

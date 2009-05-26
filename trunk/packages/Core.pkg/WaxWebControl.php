@@ -91,19 +91,22 @@
 		* The Render function is used to retrieve this XMLControl
 		* class as a DOM Element for use in rendering.
 		*/
-		function Render(DOMDocument $doc) {
+		function Render(DOMDocument $doc) {	
+			// primarily for last minute manipulation
+			if (method_exists($this,"PreRender"))
+				$this->PreRender();
+				
 			// create the DOMNode and set the attributes
 			$ctrl = $doc->createElement($this->tagName, $this->value);
 			foreach ($this->htmlattributes as $attrib => $value) {
 				$ctrl->setAttribute($attrib,$value);
 			}
 			
-			if (method_exists($this,"PreRender"))
-				$this->PreRender($doc);
-			
 			// add the children to this control
 			$ctrl = $this->RenderChildren($doc, $ctrl);
 			
+			
+			// primarily for creating script bindings
 			if (method_exists($this,"PostRender"))
 				$this->PostRender($doc);
 							

@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Wax Website</title>
-        <link rel='stylesheet' type='text/css' href='wispwebsite_css.css' />
+        <link rel='stylesheet' type='text/css' href='waxwebsite.css' />
         
         <Theme Name="defaultblue" />
         
@@ -13,34 +13,37 @@
     </head>
     <body>
         <div class='pagewrapper'>
-            <div>
-                <div class='logo'>
-                    <a href='index.php'><Image From="theme" Which="defaultblue" Src="logo_med.png" /></a>
+            <div class='header'>
+            	<div class='logo'>
+                    <a href='index.php'><Image From="theme" Which="defaultblue" Src="logo_standard.png" /></a>
                 </div>
-                <hr />
+                
                 <div class='navigation'>
                     <NavList>
-                        <NavListItem Text="Home" Link="structure.php" />
-                        <NavListItem Text="Test 1" Link="structure.php?action=first" />
-                        <NavListItem Text="Test 2" Link="structure.php?action=second" />
+                        <NavListItem Text="Home" Link="index.php" />
+                        <NavListItem Text="The Template" Link="index.php?action=template" />
+                        <NavListItem Text="The PHP" Link="index.php?action=code" />
                     </NavList>
                 </div>
             </div>
-            <hr />
-            <div class='contentblock'>
-            	<SampleTemplated />
-            	
+            
+            <div class='content'>
                 <PageActions>
-                    <PageAction name='first'>
-                        <h2>This is a test action</h2>
-						And this is the page content.
+                    <PageAction name='template'>
+                        <h2>This is the template file</h2>
+                        This page uses the GeSHi syntax highligher, demonstrating the 
+                        relatively simple ability to embed libraries as Wax objects.
+                        
+                        <SyntaxHighlighter SourceFile="master.waxml" Language="xml" />
                     </PageAction>
-                    <PageAction name="second">
-                    	<h2>This is another test action </h2>
-						This is a test action.
+                    <PageAction name="code">
+                        <h2>This is the PHP Code-Behind</h2>
+                        This page uses a custom syntax highlighter, demonstrating the ability
+                        to create new objects.
+                        
+                        <h2>This is the php Code-Behind</h2>
+                        <CodePanel SourceFile="index.php" />
                     </PageAction>
-                    
-                    <!-- must be placed after all other PageActions have been defined -->
                     <DefaultPageAction>
                         <h2>Welcome to Wax</h2>
                         This page is both a demonstration of the Wax framework itself as well as 
@@ -56,12 +59,14 @@
                         interface for the framework and the sites themselves.
                     </DefaultPageAction>
                 </PageActions>
+                
+                <TemplatePlaceholder ID='pagecontent' />
             </div>
-            <hr />
+            
             <div class='footer'>
                 <b>Wax PHP Framework</b><br />
                 &amp;copy; 2009 Joe Chrzanowski<br />
-                Affiliated with and Funded by <a href='http://rcos.cs.rpi.edu/'>RPI Center for Open-Source Software</a>
+                Affiliated with <a href='http://rcos.cs.rpi.edu/'>RPI Center for Open-Source Software</a>
             </div>
         </div>
     </body>

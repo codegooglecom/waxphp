@@ -18,15 +18,20 @@
 	}
 	class CSSVar extends WaxControl { }
 	
+	
+	
+	
 	class Theme extends WaxControl {
 		private $_themepath = NULL;
 		private $_themeconf = NULL;
 		private $_cssaggregator = NULL;
+		public static $active = NULL;
 		
 		function OnConstruct() {
 			if (isset($this->xmlattributes['Name'])) {
 				$this->_themepath = WaxConf::LookupPath("fs/theme",array("theme" => $this->xmlattributes['Name']));
 				$this->_themeconf = Page::LoadTemplate($this->_themepath . "/theme.waxml");
+				self::$active = $this;
 				
 				$this->_cssaggregator = new CSSAggregator($this);
 			}
@@ -34,6 +39,12 @@
 		
 		function GetCSSVars() {
 			return $this->_themeconf->GetCSSVars();
+		}
+		static function GetActiveTheme() {
+			if (!is_null(self::$active)) {
+				return self::$active;
+			}
+			else return NULL;
 		}
 		
 		private function rGetResources($regex, $path = null, $convertForWeb = true) {
@@ -48,8 +59,10 @@
 					$base = array_merge($base, $this->rGetResources($regex,"$path/$file", $convertForWeb));
 				}
 				else if (preg_match($regex,$file)) {
-					if ($convertForWeb)
-						$base[] = WaxConf::FStoWEB($path . '/' . $file);
+					if ($convertForWeb) {
+						$file = WaxConf::FStoWEB($path . '/' . $file);
+						$base[] = $file;
+					}
 					else
 						$base[] = "$path/$file";
 				}
@@ -70,35 +83,10 @@
 			return $ret;
 		}
 		
-		/**
-		* This function returns the location of the file that has
-		* aggregated all of the theme's CSS files and applied the 
-		* necessary variables to them.
-		*/
 		function GetAggregatedStylesheets() {
-			$csscache = WaxConf::LookupPath("fs/theme/csscache",array("theme" => $this->xmlattributes["Name"]));
-			$newname = basename($this->_cssaggregator->GetTmpName());
-			$link = NULL;
-			
-			// if the cache directory doesn't exist, create it
-			if (!is_dir($csscache)) {
-				mkdir($csscache, 0600);
-			}
-			
-			// if we have a cache directory, try saving the file there for direct reference
-			if (is_dir($csscache)) {
-				if (!is_file("$csscache/$newname"))
-					rename($this->_cssaggregator->GetTmpName(), $csscache . "/" . $newname);
-					
-				$link = WaxConf::LookupPath("web/theme/csscache",array("theme" => $this->xmlattributes["Name"])) . "/" . $newname;
-			}
-			else {
-				// then we need to link it to the css aggregator lookup page
-				$link = WaxConf::LookupPath("web/") . "/util/css.php?" . $newname;
-			}
-			
-			return $link;
+			return $this->_cssaggregator->GetAggregatedStylesheets();
 		}
+		
 		function GetStylesheetPaths($forWeb = true) {
 			$styles = $this->rGetResources("/\.css$/", WaxConf::LookupPath("fs/theme/cssdir",array("theme" => $this->xmlattributes['Name'])),$forWeb);
 			return $styles;

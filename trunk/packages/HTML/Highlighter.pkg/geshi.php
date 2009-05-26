@@ -592,18 +592,33 @@ class SyntaxHighlighter extends WaxWebControl {
         parent::__construct("div");
     }
     
-    function OnConstruct($page) {
-    	if ($this->xmlattributes['SourceFile']) {
+    function OnConstruct() {
+    	if (isset($this->xmlattributes['SourceFile'])) {
     		$this->xmlattributes['Source'] = file_get_contents($this->xmlattributes['SourceFile']);
     	}
     	
-    	if ($this->xmlattributes['Source']) {
+    	if (isset($this->xmlattributes['Source'])) {
             $this->set_source($this->xmlattributes['Source']);
         }
-        if ($this->xmlattributes['Language']) {
+        
+        if (isset($this->xmlattributes['Language'])) {
             $this->set_language($this->xmlattributes['Language']);
         }
-        $this->set_language_path($this->xmlattributes['Path']);
+        
+        if (isset($this->xmlattributes["Path"]))
+	        $this->set_language_path($this->xmlattributes['Path']);
+    }
+    
+    function RenderChildren(DOMDocument $doc, DOMNode $ctrl) {
+    	$this->value = $this->parse_code();
+		$tmpdoc = $doc->createDocumentFragment();
+		
+		$this->value = Wax::XMLFixEntities($this->value);
+		
+		$tmpdoc->appendXML($this->value);
+		$ctrl->appendChild($tmpdoc);
+		
+		return $ctrl;
     }
 
     /**
@@ -2006,12 +2021,6 @@ class SyntaxHighlighter extends WaxWebControl {
         $this->parse_cache_built = true;
     }
 
-
-	function Render($return = false) {
-		$buf = $this->parse_code();
-		if ($return) return $buf;
-		else echo $buf;
-	}
     /**
      * Returns the code in $this->source, highlighted and surrounded by the
      * nessecary HTML.

@@ -16,9 +16,23 @@
 					}
 				}
 				else if ($type == "css") {
-					foreach ($resources as $css) {
-						$tag = new Stylesheet($css);
-						$this->AddChild($tag);
+					// create a CSS aggregator using the current active theme
+					if (!is_null(Theme::GetActiveTheme())) {
+						foreach ($resources as &$resource) {
+							$resource = WaxConf::WEBtoFS($resource);
+						}
+						
+						if (count($resources) > 0) {
+							$ag = new CSSAggregator(Theme::GetActiveTheme(),$resources);
+							$sstag = new Stylesheet($ag->GetAggregatedStylesheets());
+							$this->AddChild($sstag);
+						}
+					}
+					else {
+						foreach ($resources as $css) {
+							$sstag = new Stylesheet($css);
+							$this->AddChild($sstag);
+						}
 					}
 				}
 			}

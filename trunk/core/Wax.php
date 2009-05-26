@@ -17,6 +17,26 @@
 			return self::$_jscss;
 		}
 		
+		static function XMLFixEntities($text) {
+			// use a list of standard HTML entities and their corresponding unicode characters to allow their usage in WaxML documents
+			$xtoh = array(
+				"&nbsp;" => 160,
+				"&lt;" => 60,
+				"&gt;" => 62,				
+				"&cent;" => 162,
+				"&pound;" => 165,
+				"&yen;" => 165,
+				"&euro;" => 8364,
+				"&sect;" => 167,
+				"&copy;" => 169,
+				"&reg;" => 174,
+				
+				"&amp;" => 38 		// have to do this last.
+			);
+			foreach ($xtoh as $key => $num) $xtoh[$key] = "&#$num;";
+			return str_replace(array_keys($xtoh),array_values($xtoh),$text);
+		}
+		
 		
 		/**
     	* Import a Wax package into the Wax Runtime

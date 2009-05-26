@@ -1,0 +1,26 @@
+﻿.navlist {
+	padding:0px;
+}
+
+.navlist li {
+	list-style-type:none;
+	display:inline;
+}
+
+.navlist_link {
+	background:[PrimaryDark];
+	color:[PrimaryLight] !important;
+	padding:[SecondaryPadding];
+	padding-left:[PrimaryPadding];
+	padding-right:[PrimaryPadding];
+	
+	border:[PrimaryBorder];
+	text-decoration:none;
+}
+.navlist_active {
+	background:[SecondaryDark];
+}
+
+.navlist_link:hover {
+	background-color:[SecondaryDark];
+}

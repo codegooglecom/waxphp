@@ -9,12 +9,45 @@
 		private $_tmpfile = '';
 		private $_hashstring = '';
 		
-		function __construct(Theme $theme) {
+		function __construct(Theme $theme, $stylesheets = NULL) {
 			$this->_theme = $theme;
 			$this->_replacement_map = $this->_theme->GetCSSVars();
-			$this->_sources = $theme->GetStylesheetPaths(false);
+			if (is_array($stylesheets))
+				$this->_sources = $stylesheets;
+			else
+				$this->_sources = $theme->GetStylesheetPaths(false);
 			
 			$this->importFromSources();
+		}
+		
+		/**
+		* This function returns the location of the file that has
+		* aggregated all of the theme's CSS files and applied the 
+		* necessary variables to them.
+		*/
+		function GetAggregatedStylesheets() {
+			$csscache = WaxConf::LookupPath("fs/theme/csscache",array("theme" => $this->_theme->xmlattributes["Name"]));
+			$newname = basename($this->GetTmpName());
+			$link = NULL;
+			
+			// if the cache directory doesn't exist, create it
+			if (!is_dir($csscache)) {
+				mkdir($csscache, 0600);
+			}
+			
+			// if we have a cache directory, try saving the file there for direct reference
+			if (is_dir($csscache)) {
+				if (!is_file("$csscache/$newname"))
+					rename($this->GetTmpName(), $csscache . "/" . $newname);
+					
+				$link = WaxConf::LookupPath("web/theme/csscache",array("theme" => $this->_theme->xmlattributes["Name"])) . "/" . $newname;
+			}
+			else {
+				// then we need to link it to the css aggregator lookup page
+				$link = WaxConf::LookupPath("web/") . "/util/css.php?" . $newname;
+			}
+			
+			return $link;
 		}
 		
 		function getHash() {
@@ -48,7 +81,8 @@
 				$lookfor = array();
 				preg_match_all("/\[(\w+)\]/",$contents,$lookfor);
 				foreach ($lookfor[1] as $search) {
-					$contents = str_replace("[$search]", $this->lookupReplacement($search), $contents);
+					$replace = $this->lookupReplacement($search);
+					$contents = str_replace("[$search]", $replace, $contents);
 				}
 				
 				file_put_contents($this->_tmpfile, $contents);
@@ -65,6 +99,7 @@
 				$this->_hashstring .= md5($filecontents);
 				
 				fwrite($fh, $filecontents);
+				fwrite($fh, "\r\n");
 			}
 			
 			$this->go($fh);

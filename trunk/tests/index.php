@@ -2,12 +2,7 @@
 	require_once("../init.php");
 	
 	class SamplePage extends Page {	
-		function first() {
-			echo "Ran the first action!<br />";
-		}
-		function second() {
-			echo "Ran the second action!<br />";
-		}
+		// I don't even need anything here
 	}
 	
 	$page = new SamplePage("master.waxml");

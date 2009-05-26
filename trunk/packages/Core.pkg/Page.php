@@ -260,6 +260,23 @@
 		* @param bool $returnall If the file happens to be improperly formatted, defines whether or not to return all elements at level 0 or just the initial one
 		*/
 		static function LoadTemplate($templateFile, $returnall = false) {
+		
+			// try to cache it and fix any broken entities
+			$templateFileNew = sys_get_temp_dir() . "/waxtmpl_";
+			$contents = file_get_contents($templateFile);
+			$hash = md5($contents);
+			$templateFileNew .= $hash . ".waxml";
+			if (file_exists($templateFileNew))
+				$templateFile = $templateFileNew;
+			else {
+				if (file_put_contents($templateFileNew,Wax::XMLFixEntities($contents))) {
+					$templateFile = $templateFileNew;
+				}
+			}			
+			// if the entity fix and cache worked, then $templateFile will now point to the temp file where the parsed one is located
+			
+		
+			// load the preprocessed template into the xmlreader
 			$reader = new XMLReader();
             if (file_exists($templateFile)) {
                 $reader->open($templateFile);

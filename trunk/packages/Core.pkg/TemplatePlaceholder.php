@@ -7,8 +7,7 @@
             $this->_allow = array("Src");
         }
         
-        function OnConstruct($page) {
-        	$page->RegisterImportant($this->xmlattributes['ID'], $this);
+        function OnConstruct() {
             if (!isset($this->xmlattributes['Src'])) {
                 // then return the empty div
             }

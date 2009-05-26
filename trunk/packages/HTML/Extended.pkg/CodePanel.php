@@ -7,18 +7,19 @@
     		"require_once","function",
     		"WISP",'$this','self'
     	);
+    	private $_parsedcode = '';
     	// class has to go first
     
     	function __construct() {	
     		parent::__construct("div");
     		$this->htmlattributes['class'] = "codepanel";
     	}
-    	function OnConstruct($page) {
+    	function OnConstruct() {
     		if (isset($this->xmlattributes['SourceFile'])) {
     			$this->xmlattributes['Code'] = file_get_contents($this->xmlattributes['SourceFile']);
     		}
     	}
-    	function Build() {
+    	function PreRender() {
     		$code = htmlentities($this->xmlattributes['Code']);
     		
     		$result = array();
@@ -51,7 +52,16 @@
 			$code = preg_replace("/new ([\w]+)\(\)/","<span class='object'>$1</span>()",$code);
 			$code = preg_replace("/([\w]+)([\w]*)\(/","<span class='function'>$1</span>(",$code);
 			
-    		$this->SetHTML($code);
+    		$this->_parsedcode = $code;
     	}
+		function RenderChildren(DOMDocument $doc, DOMNode $ctrl) {
+			$tmpdoc = $doc->createDocumentFragment();
+			
+			$this->_parsedcode = Wax::XMLFixEntities($this->_parsedcode);
+			$tmpdoc->appendXML($this->_parsedcode);
+			$ctrl->appendChild($tmpdoc);
+			
+			return $ctrl;
+		}
     }
 ?>
