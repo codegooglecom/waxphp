@@ -17,8 +17,8 @@
 				</tr>
 				<tr>
 					<td class='post_table_footer' colspan='2'>
-						<a href='?posts/edit/<?=$post['id']?>'>edit post</a> | 
-						<a href='?posts/delete/<?=$post['id']?>'>delete post</a>
+						<a href='posts.php?action=edit&id=<?=$post['id']?>'>edit post</a> | 
+						<a href='posts.php?action=delete&id=<?=$post['id']?>'>delete post</a>
 					</td>
 				</tr>
 			</table>

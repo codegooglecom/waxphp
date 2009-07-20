@@ -5,10 +5,20 @@
 		// that the controller is part of a block
 		function __construct() {
 			// specify that this is part of a block (mostly for locating views)
+			$this->model = new PostsModel();
 			parent::__construct("posts");
 		}
 		function index() {
-			return $this->model->Read();
+			// check sort queries
+			$args = array();
+			if (isset($this->request['sort'])) {
+				$args['sort']['column'] = $this->request['sort'];
+				if (isset($this->request['sort_direction']))
+					$args['sort']['direction'] = $this->request['sort_direction'];
+			}
+				
+			$arr = $this->model->Read($args);
+			return $arr;
 		}
 		
 		// inserts the information - don't need a utility function to get the default
@@ -19,7 +29,7 @@
 		
 		// fetches information for the edit view
 		function edit() {
-			return $this->model->Read(array("id" => $this->get['id']));
+			return array_shift($this->model->Read(array("id" => $this->get['id'])));
 		}
 		// saves the update and redirects to index()
 		function update() {

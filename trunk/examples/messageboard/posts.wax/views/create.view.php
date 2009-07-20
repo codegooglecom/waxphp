@@ -1,4 +1,4 @@
-<form method="POST" action="?posts/insert">
+<form method="POST" action="posts.php?action=insert">
 	<input type='hidden' name='date' value='<?=time()?>' />
 	<table align='center'>
 		<tr>

@@ -1,4 +1,4 @@
-<form method="POST" action="?posts/update">
+<form method="POST" action="posts.php?action=update">
 	<input type='hidden' name='date' value='<?=time()?>' />
 	<input type='hidden' name='id' value='<?=$id?>' />
 	<table align='center'>
