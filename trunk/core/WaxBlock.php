@@ -14,13 +14,13 @@
 		);
 		var $name = NULL;
 		
-		function __construct($blockpath) {
+		function __construct($blockpath, $include_files = false) {
 			$info = pathinfo($blockpath);
 			$this->name = $info['filename'];
-			$this->loadResources($blockpath);
+			$this->loadResources($blockpath, $include_files);
 		}
 				
-		private function loadResources($dir) {
+		private function loadResources($dir, $include_files = false) {
 			foreach (scandir($dir) as $file) {
 				if ($file[0] == '.') continue;			// the file is hidden
 				else if ($file[0] == "_") continue;		// the file is disabled
@@ -41,8 +41,9 @@
 					$ext = array_pop(explode('.',$file));
 					switch ($ext) {
 						case "php":
-							// the file (should) contain a class or 2 -- include them into the runtime
-							require_once($dir . '/' .$file);
+							if ($include_files) {
+								require_once($dir . '/' .$file);
+							}
 						break;
 						default:
 							// don't know... php files should be the only ones here

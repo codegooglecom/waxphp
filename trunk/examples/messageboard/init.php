@@ -14,5 +14,4 @@
 	Wax::LoadBlock("database");	
 	Wax::LoadBlock("posts");
 	Wax::LoadBlock("resources");
-	Wax::LoadBlock("dbauth");
 ?>

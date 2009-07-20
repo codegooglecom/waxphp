@@ -7,7 +7,6 @@
 	// show the header
 	new HeaderController();
 	
-	$login = new LoginController();
 	$controller = new Posts();
 		
 	new FooterController();

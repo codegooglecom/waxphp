@@ -39,11 +39,9 @@
             'app'			=> '',
             
             'core' 			=> 'core',                                          // Folder that holds the core Wax functionality
-            
-            // where to locate a block
-            'block'			=> '{block}.wax',
-            
+                        
             // specify paths to different types of data
+            'blockdir' 		=> 'blocks',
             'imagedir' 	 	=> 'images',
             'scriptdir'		=> 'js',
             'cssdir' 		=> 'css',
@@ -52,13 +50,26 @@
             'csscache'  	=> 'csscache',
             
             // specify naming for each of the parts -- note images need an extension specified
+            'appblock'		=> '{block}.wax',
+            'block'			=> '[blockdir]/{block}.wax',
             'image' 		=> '[imagedir]/{image}',
             'script'		=> '[scriptdir]/{script}.js',
             'css'			=> '[cssdir]/{css}.css',
             'role'			=> '[roledir]/{role}.php',
             'view'			=> '[viewdir]/{view}.view.php'
-            
         );
+        
+        // paths to look for blocks
+        private static $_blockpath = array(
+        	"fs/app/appblock",	// /app/Block.wax
+    		"fs/app/block",		// /app/blocks/Block.wax
+    		"fs/block",			// /wax/blocks/Block.wax
+        );
+        // blocks to autoload (plugins/libraries/themes)
+        private static $_autoload = array(
+        	"mvc"
+        );
+        private static $_loaded_blocks = array();
 
         function __construct() { 
         	throw new Exception("ERROR: You can't instantiate a WaxConf object"); 
@@ -139,27 +150,26 @@
             return $path;
         }
         
-        // register a tag class for use in template files
-        static function RegisterTagClass($tagName, $className = NULL) {
-        	self::$_registered_tags[$tagName] = ($className == NULL ? $tagName : $className);
-        }
-        static function GetTagClassName($tagName) {
-        	if (self::TagLoaded($tagName)) {
-        		return self::$_registered_tags[$tagName];
-        	}
-        	else return false;
-        }
-        static function TagLoaded($tagName) {
-        	return isset(self::$_registered_tags[$tagName]);
-        }
-        
-        // need to evaluate the block directory to get all the resources
+        // block functions
         static function LoadBlock($block) {
-        	$path = self::LookupPath("fs/app/block",array("block" => $block));
-        	if (is_dir($path)) {
-        		$block = new WaxBlock($path);
-        	}
-        	return $block;
+        	if (!isset(self::$_loaded_blocks[$block])) {
+	        	$path = self::findBlock($block);
+	        	
+	        	$blockobj = new WaxBlock($path, true);
+	        	self::$_loaded_blocks[$block] = $blockobj;
+	        	
+	        	return $blockobj;
+	        }
+	        else return self::GetBlock($block);
+        }
+        static function GetBlock($block) {
+        	if (isset(self::$_loaded_blocks[$block]))
+        		return self::$_loaded_blocks[$block];
+        	else {
+	        	$path = self::findBlock($block);
+	        	if (is_null($path)) return NULL;
+	        	else return new WaxBlock($path);
+	        }
         }
         static function GetBlockContext($file) {
         	$path = pathinfo($file);
@@ -167,6 +177,18 @@
         	return $path['filename'];
         }
         
+        
+        // Private functions
+        private static function findBlock($block) {
+        	foreach (self::$_blockpath as $path) {
+        		$blockloc = self::LookupPath($path,array("block" => $block));
+	        	if (is_dir($blockloc)) {
+	        		return $blockloc;
+	        	}
+	        }
+        	return NULL;
+        }
+        // require the files in a directory
         private static function require_dir($dir) {
         	if (is_dir($dir)) {
         		$objects = scandir($dir);
@@ -185,7 +207,6 @@
         // initialize Wax
         static function Init($dir) {
             if (!self::$_init) {
-            	// parse the conf array... need a way to hash/cache this
                 self::PreParse();
                 
                 $dir = str_replace('\\','/',$dir);
@@ -194,6 +215,11 @@
                 $dir = self::LookupPath('fs/core');
 				if (is_dir($dir))
 	                self::require_dir("$dir");
+	                
+	            // run autoloads
+	            foreach (self::$_autoload as $block) {
+	            	self::LoadBlock($block);
+	            }
 	                
                 self::$_init = true;
             }
