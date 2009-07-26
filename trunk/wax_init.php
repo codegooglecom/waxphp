@@ -14,13 +14,14 @@
     
     // If you mess this up you might have a tough time fixing it.
     class WaxConf {
-        const FS = 'fspath';
-        const WEB = 'webpath';
-        const OTHER = 'nullpath';
-        
         private static $_debug = false;
         private static $_init = false;
-        private static $_registered_tags = array();
+        
+        private static $_version = array(
+        	"version"	=> 0,
+        	"revision"  => 6,
+        	"build" 	=> 1
+        );
         
         // Naming for the paths:
         // [varname]        another variable from the $_paths array
@@ -30,17 +31,15 @@
         // DON'T CHANGE THESE UNLESS YOU KNOW WHAT YOU'RE DOING
         // You most likely should never ever have to touch this.
         private static $_paths = array(
+        	// important base paths needed to determine working directories, etc..
             'relpath' 		=> '/wax',										// basically the web access url for Wax
-            
             'web'			=> '[relpath]',
-            
             'DOCUMENT_ROOT' => '<DOCUMENT_ROOT>',
             'fs' 			=> '<DOCUMENT_ROOT>[relpath]',
             'app'			=> '',
-            
             'core' 			=> 'core',                                          // Folder that holds the core Wax functionality
                         
-            // specify paths to different types of data
+            // specify folder names for different types of data
             'blockdir' 		=> 'blocks',
             'imagedir' 	 	=> 'images',
             'scriptdir'		=> 'js',
@@ -49,14 +48,22 @@
             'roledir'		=> 'roles',
             'csscache'  	=> 'csscache',
             
-            // specify naming for each of the parts -- note images need an extension specified
+            // specify naming for each of the parts
             'appblock'		=> '{block}.wax',
             'block'			=> '[blockdir]/{block}.wax',
             'image' 		=> '[imagedir]/{image}',
             'script'		=> '[scriptdir]/{script}.js',
             'css'			=> '[cssdir]/{css}.css',
             'role'			=> '[roledir]/{role}.php',
-            'view'			=> '[viewdir]/{view}.view.php'
+            'view'			=> '[viewdir]/{view}.view.php',
+            
+            // naming shortcuts for blocks - these look kind of weird
+            // the purpose is to allow for easier name resolution by using the 
+            // folder name in the block as the variable instead of the singlular 
+            // version of whatever we're looking for
+            'roles'			=> '[roledir]/{roles}.php',
+            'images'		=> '[imagedir]/{images}',
+            'js' 			=> '[scriptdir]/{js}.js'
         );
         
         // paths to look for blocks
@@ -65,14 +72,23 @@
     		"fs/app/block",		// /app/blocks/Block.wax
     		"fs/block",			// /wax/blocks/Block.wax
         );
+        
         // blocks to autoload (plugins/libraries/themes)
         private static $_autoload = array(
-        	"mvc"
+        	"mvc",		// allows for MVC based web development
+        	"default"   // default HTML themes for wax
         );
+        
+        
         private static $_loaded_blocks = array();
 
         function __construct() { 
         	throw new Exception("ERROR: You can't instantiate a WaxConf object"); 
+        }
+        
+        static function Version($as_number = true) {
+        	$v = self::$_version;
+        	return $v['version'] . "." . $v['revision'] . "." . $v['build'];
         }
         
         static function WaxRoot() {
@@ -80,7 +96,9 @@
         }
 
         // get a full path -- this function is responsible for any routing requests
-        // as it looks up paths for the entire wax framework.
+        // -- it looks up paths for the entire wax framework, therefore,
+        // the entire framework can be restructured by modifying only the path
+        // variables above, then making the proper corresponding calls to this function
         static function LookupPath($what, $args = null) {
 			$replaced = preg_replace("/([\w]+)/","[$0]",$what);
 			
@@ -162,7 +180,13 @@
 	        }
 	        else return self::GetBlock($block);
         }
-        static function GetBlock($block) {
+        
+        // returns a block by name -- looks thru the blockpath
+        // to try and find the block
+        static function GetBlock($block = __FILE__) {
+        	if (is_null($block))
+        		echo "Trying to get block in $block<br />";
+        	
         	if (isset(self::$_loaded_blocks[$block]))
         		return self::$_loaded_blocks[$block];
         	else {
@@ -171,6 +195,13 @@
 	        	else return new WaxBlock($path);
 	        }
         }
+        
+        // used mostly for getting all resources needed for an application
+        // usually in a header or something of the sort
+        static function GetLoadedBlocks() {
+        	return self::$_loaded_blocks;
+        }
+        // find out which block a file is located in -- doesn't always work
         static function GetBlockContext($file) {
         	$path = pathinfo($file);
         	$path = pathinfo($path['dirname']);
@@ -207,20 +238,24 @@
         // initialize Wax
         static function Init($dir) {
             if (!self::$_init) {
+            	// make sure the paths have been preparsed (for performance)
                 self::PreParse();
                 
+                // determine application
                 $dir = str_replace('\\','/',$dir);
                 self::$_paths['app'] = str_replace(self::LookupPath('fs/'),'',$dir);
                 
+                // require core
                 $dir = self::LookupPath('fs/core');
 				if (is_dir($dir))
 	                self::require_dir("$dir");
 	                
-	            // run autoloads
+	            // autoload blocks
 	            foreach (self::$_autoload as $block) {
 	            	self::LoadBlock($block);
 	            }
-	                
+	            
+	            // ready to go
                 self::$_init = true;
             }
         }

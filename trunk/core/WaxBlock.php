@@ -21,22 +21,31 @@
 		}
 				
 		private function loadResources($dir, $include_files = false) {
-			foreach (scandir($dir) as $file) {
-				if ($file[0] == '.') continue;			// the file is hidden
-				else if ($file[0] == "_") continue;		// the file is disabled
-				else if (is_dir("$dir/$file")) {
-					// then the directory is probably a special one:
-					$allowed = array("views","js","css","images","roles");
-					
-					if (array_search($file,$allowed) !== false) {
-						foreach (scandir("$dir/$file") as $thisfile) {
-							if ($thisfile[0] == '.') continue;
-							else {
+			$allowed = array("roles","views","js","css","images");
+			foreach ($allowed as $file) {	
+				if (is_dir("$dir/$file")) {
+					foreach (scandir("$dir/$file") as $thisfile) {
+						if ($thisfile[0] == '.') continue;
+						else {
+							if ($file == "roles" && $include_files) {
+								require_once("$dir/$file/$thisfile");
+							}
+							if ($file == "views")
 								$this->_resources[$file][array_shift(explode(".",$thisfile))] = "$dir/$file/$thisfile";
+							else {
+								$path = Wax::LookupPath("web/block/$file",array("block" => $this->name, $file => array_shift(explode(".",$thisfile))));
+								if (!file_exists($path))
+									$path = Wax::FStoWEB("$dir/$file/$thisfile");
+								$this->_resources[$file][array_shift(explode(".",$thisfile))] = $path;
 							}
 						}
 					}
 				}
+			}
+			foreach (scandir($dir) as $file) {
+				if ($file[0] == '.') continue;			// the file is hidden
+				else if ($file[0] == "_") continue;		// the file is disabled
+				else if (is_dir("$dir/$file")) continue;
 				else {
 					$ext = array_pop(explode('.',$file));
 					switch ($ext) {
