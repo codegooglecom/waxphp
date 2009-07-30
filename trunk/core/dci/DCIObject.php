@@ -9,6 +9,7 @@
 	*/
 	class DCIObject {
 		private $_roleSuffix = "Actions";
+		
 		protected $roles;
 		protected $roleclasses;
 		
@@ -62,9 +63,6 @@
 			}
 		}
 		
-		
-		function ShowReflection() { return $this->roles; }
-		
 		// checks whether or not it's possible for this Model to perform $action
 		// if it can, it returns the static class in which the method is located
 		protected function Can($action = NULL) {
@@ -80,7 +78,8 @@
 		
 		
 		
-		// function to reflect on $this to get which interfaces it implements		
+		// function to reflect on $this to get which interfaces it implements
+		// this is pretty messy... 
 		private function reflectRoles() {
 			$matches = array();
 			$reflection = Reflection::export(new ReflectionClass(get_class($this)),true);
