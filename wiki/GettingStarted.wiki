@@ -1,0 +1,108 @@
+#summary Build a Blog -- The Hello World of Frameworks
+
+= Introduction =
+
+Programming languages do "Hello World...", frameworks do "Build a Blog in 15 minutes".  Below is a walkthrough of how to use Wax and the Dynamic Data Model (DDM) to build a blog.
+
+= The Dynamic Data Model =
+
+Before we get into the actual code, a little bit of explanation is in order.  To make development easier and more flexible, many Wax applications make use of the DDM instead of a regular SQL database.  The DDM is composed of a series of Wax libraries and a specially designed database schema.  The resulting system allows for easy modification of the system's data model from the browser (instead of modifying SQL tables).  More is explained in the details below.
+
+Also- it is highly encouraged that the ACL and Login system are used when using the DDM, since it wouldn't be a very good idea to allow anyone to change the data model.
+
+= Setting Up Wax =
+
+The first step to getting started with Wax is to get the source distribution.  Extract and move the folder to the location where you want to create your application.
+
+*NOTE*: Due to the way blocks are currently implemented, the .wax extension is required at the end of all blocks (including applications).  For example, if you wanted to build a blog at http://localhost/blog, you would actually need to name it http://localhost/blog.wax
+
+Your directory structure should now look something like this:
+{{{
+`- /DOCUMENT_ROOT/blog.wax
+	`- waxphp
+		|- blocks (directories vary)
+		`- core
+			 |- include/
+			 |   |- CoreDCI/
+			 |   |   |- Context.php
+			 |   |   |- DCIException.php
+			 |   |   `- DCIObject.php
+			 |   |- config.php
+			 |   |- exceptions.php
+			 |   |- lib.php
+			 |   `- wax.php
+			 |- lib/
+			 |   |- ArraySurrogate.php
+			 |   |- HTTPArrays.php
+			 |   |- Router.php
+			 |   |- WaxBlock.php
+			 |   |- WaxObject.php
+			 |   `- iWaxDataSource.php
+			 |- managers/
+			 |   |- BlockManager.php
+			 |   `- DataSourceManager.php
+			 `- wax_init.php
+}}}
+
+Where DOCUMENT_ROOT is the root directory of your web server, often one of:
+ * /var/www 
+ * /var/www/htdocs 
+ * /home/username/public_html
+
+Consult your webserver's documentation to determine the correct path.
+
+Also note that there is a .htaccess file located in the root.  This file is not actually included by default, so you'll need to create it manually.  The file contents are as follows:
+{{{
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?$1 [QSA,L]
+</IfModule>
+}}}
+
+= Ready to Get Started: index.php = 
+
+At this point, the framework is installed and the directory is ready to go.  The next step is to create the index.php file to handle requests and load additional libraries.
+
+==Setup==
+
+The first parts of the index.php file are the most important parts.  First- the actual Wax initialization script must be run:
+
+{{{
+<?php
+    require_once(dirname(__FILE__) . "/waxphp/core/wax_init.php");
+?>
+}}}
+
+Next, the supporting libraries (blocks) need to be loaded.  In the case of this blog, we want the application, 'database' and 'ddm' blocks.  We'll need to access the application and 'ddm' blocks later, so we assign them to a variable.
+
+{{{
+<?php
+    require_once(dirname(__FILE__) . "/waxphp/core/wax_init.php");
+
+    $app = BlockManager::LoadBlockAt(getcwd()); // the application block
+    BlockManager::LoadBlock("database");               // load the Database block
+    $ddmblock = BlockManager::GetBlock("ddm");          // get a reference to the ddm block
+?>
+}}}
+
+Finally, we connect to the datasource and register it with Wax.  Since the database block and ddm use PDO as a backend, they share constructor definitions:
+
+{{{
+<?php
+    require_once(dirname(__FILE__) . "/waxphp/core/wax_init.php");
+
+    $app = BlockManager::LoadBlockAt(getcwd()); // the application block
+    BlockManager::LoadBlock("database");               // load the Database block
+    $ddm = BlockManager::GetBlock("ddm");          // get a reference to the ddm block
+
+    $dsn = "mysql:dbname=myblog; host=localhost";
+    $ddm = new IWHDS($dsn,"username","password");
+    DSM::Register($dsn, $ddm);
+?>
+
+At last -- the index.php file is set up.  Unfortunately, it doesn't really do anything yet.  
+
+== Routing and Executing the Request ==
+}}}
