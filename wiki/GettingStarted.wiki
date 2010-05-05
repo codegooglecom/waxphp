@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Programming languages do "Hello World...", frameworks do "Build a Blog in 15 minutes".  Below is a walkthrough of how to use Wax and the Dynamic Data Model (DDM) to build a very basic blog.
+Programming languages do "Hello World...", frameworks do "Build a Blog in 15 minutes".  Below is a walkthrough of how to use Wax and the Dynamic Data Model (DDM) to build a very basic blog (though it might take longer than 15 minutes)
 
 = The Dynamic Data Model =
 
