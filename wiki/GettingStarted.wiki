@@ -4,7 +4,7 @@
 
 Programming languages do "Hello World...", frameworks do "Build a Blog in 15 minutes".  Below is a walkthrough of how to use Wax and the Dynamic Data Model (DDM) to build a very basic blog (though it might take longer than 15 minutes)
 
-If you haven't read anything about DCI, then I recommend you check out this article: [http://code.google.com/p/php-coredci/wiki/UsingCoreDCI] about how Wax's runtime network is structured.  You don't actually need it to make it through this tutorial, but it'll make it easier to understand once you finish.
+If you haven't read anything about DCI, then I recommend you check out this article: [http://code.google.com/p/php-coredci/wiki/UsingCoreDCI] about how Wax's runtime network is structured.  You don't actually need it to make it through this tutorial, but it explains the underlying object system that Wax uses.
 
 = What You'll Need =
  * A webserver that support url rewriting
