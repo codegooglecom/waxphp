@@ -4,6 +4,13 @@
 
 Programming languages do "Hello World...", frameworks do "Build a Blog in 15 minutes".  Below is a walkthrough of how to use Wax and the Dynamic Data Model (DDM) to build a very basic blog (though it might take longer than 15 minutes)
 
+= What You'll Need =
+ * A webserver that support url rewriting
+ * PHP 5.2 (earlier may work, I don't know)
+ * MySQL database (and a way to import the schema)
+ * [http://waxphp.googlecode.com/files/waxphp-0.11.tar.gz Wax 0.11]
+ * [http://waxphp.googlecode.com/files/BlogTutorial-0.11.tar.gz Source Code and Schema for This Tutorial]
+
 = The Dynamic Data Model =
 
 Before we get into the actual code, a little bit of explanation is in order.  To make development easier and more flexible, many Wax applications make use of the DDM instead of a regular SQL database.  The DDM is composed of a series of Wax libraries and a specially designed database schema.  The resulting system allows for easy modification of the system's data model from the browser (instead of modifying SQL tables).  More is explained in the details below.
