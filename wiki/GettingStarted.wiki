@@ -93,6 +93,12 @@ Next, the supporting libraries (blocks) need to be loaded.  In the case of this 
 ?>
 }}}
 
+Note that 3 different functions were used to load these blocks.  Each one performs slightly differently:
+
+ * *::LoadBlock* - Loads a block into the runtime
+ * *::GetBlock* - Loads a block into the runtime and returns the WaxBlock object
+ * *::LoadBlockAt* - Loads a block by its directory rather than by its name.
+
 Finally, we connect to the datasource and register it with Wax.  Since the database block and the ddm use PDO as a backend, they share constructor definitions:
 
 {{{
