@@ -12,12 +12,13 @@ Before we get into the actual code, a little bit of explanation is in order.  To
 
 The first step to getting started with Wax is to get the source distribution.  Extract and move the folder to the location where you want to create your application.
 
-*NOTE*: Due to the way blocks are currently implemented, the .wax extension is required at the end of all blocks (including applications).  For example, if you wanted to build a blog at http://localhost/blog, you would actually need to name it http://localhost/blog.wax
+*NOTE*: Due to the way blocks are currently implemented, the .wax extension is required at the end of all blocks (including applications).  For example, if you wanted to build a blog at http://server.com/blog, you would actually need to name it http://server.com/blog.wax
 
 Your directory structure should now look something like this (sorry for the terrible highlighting...just ignore it):
 {{{
 `- /DOCUMENT_ROOT/blog.wax
-	`- waxphp
+        |- .htaccess
+	`- waxphp-0.11
 		|- blocks (directories vary)
 		`- core
 			 |- include/
@@ -69,7 +70,7 @@ The first parts of the index.php file are the most important parts.  First- the 
 
 {{{
 <?php
-    require_once(dirname(__FILE__) . "/waxphp/core/wax_init.php");
+    require_once(dirname(__FILE__) . "/waxphp-0.11/core/wax_init.php");
 ?>
 }}}
 
@@ -77,7 +78,7 @@ Next, the supporting libraries (blocks) need to be loaded.  In the case of this 
 
 {{{
 <?php
-    require_once(dirname(__FILE__) . "/waxphp/core/wax_init.php");
+    require_once(dirname(__FILE__) . "/waxphp-0.11/core/wax_init.php");
 
     Wax::LoadBlock("database");             // The WaxPDO wrapper for database functionality
     $ddmblock = Wax::GetBlock("ddm");       // The Dynamic Data Model libraries
@@ -89,7 +90,7 @@ Finally, we connect to the datasource and register it with Wax.  Since the datab
 
 {{{
 <?php
-    require_once(dirname(__FILE__) . "/waxphp/core/wax_init.php");
+    require_once(dirname(__FILE__) . "/waxphp-0.11/core/wax_init.php");
 
     Wax::LoadBlock("database");             // The WaxPDO wrapper for database functionality
     $ddmblock = Wax::GetBlock("ddm");       // The Dynamic Data Model libraries
@@ -110,7 +111,7 @@ The DDM implements a custom router and series of execution contexts to handle th
 
 {{{
 <?php
-    require_once(dirname(__FILE__) . "/waxphp/core/wax_init.php");
+    require_once(dirname(__FILE__) . "/waxphp-0.11/core/wax_init.php");
 
     Wax::LoadBlock("database");             // The WaxPDO wrapper for database functionality
     $ddmblock = Wax::GetBlock("ddm");       // The Dynamic Data Model libraries
@@ -181,7 +182,7 @@ The scaffolder passes certain variables to its respective view files.  In the ca
  * *rows*: A list of all records for this model,
  * *structure*: The attribute definitions for this model
 
-Using these variables, a simple view could be created that looked more like a blog:
+Using these variables, a simple view could be created that made the posts look more like a blog:
 {{{
 <?php foreach ($rows as $post): ?>
 <h3><?=$post['Title']?></h3>
@@ -247,6 +248,18 @@ echo $arctx->Execute($structure['Date Posted'],"view",$post['Date Posted']);
 <hr />
 <?php endforeach; ?>
 }}}
+
+Here you see the first use of the function `url_to`, which generates a url to a resource.  The arguments for the function are as follows:
+{{{
+function url_to($method, $object = NULL, $arguments = array()) {...}
+}}}
+
+Similarly, the `link_to` method can be used to generate HTML links to resources:
+{{{
+function link_to($innerHTML, $method, $object = NULL, $arguments = array()) {...}
+}}}
+
+Wax provides several 'helper functions' to help reduce the amount of code needed for common tasks.  More information on these functions is available at WaxHelperFunctions.
 
 == Showing Comments On Posts ==
 Now that comments can be added to posts, it would be nice if they would all display underneath a post.  This is finally the part where actions need to be hard coded.  In this case, we want to override the index method from the scaffolder role.  This can be done by creating a new context that wraps the call to the Posts object.  This context would be created at `blog.wax/contexts/PostsIndexCtx.php`.
